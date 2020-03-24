@@ -68,14 +68,7 @@ module Google
       # @return [String]
       #  Value of content-type header
       def media_type
-        _, content_type = self.headers.detect do |h, v|
-          h.downcase == 'Content-Type'.downcase
-        end
-        if content_type
-          return content_type[/^([^;]*);?.*$/, 1].strip.downcase
-        else
-          return nil
-        end
+        'application/json'
       end
       
       ##
