@@ -107,7 +107,7 @@ module Google
         logger.warn { "#{self.class} - Please provide :application_name and :application_version when initializing the client" }
       end
 
-      proxy = options[:proxy] || Object::ENV["http_proxy"]
+      proxy = options[:proxy] || Object::ENV["http_proxy"] || {}
 
       self.user_agent = options[:user_agent] || (
         "#{application_string} " +
@@ -135,7 +135,7 @@ module Google
         faraday.options.params_encoder = Faraday::FlatParamsEncoder
         faraday.ssl.ca_file = ca_file
         faraday.ssl.verify = true
-        faraday.proxy proxy
+        faraday.proxy **proxy
         faraday.adapter Faraday.default_adapter
         if options[:faraday_option].is_a?(Hash)
           options[:faraday_option].each_pair do |option, value|
