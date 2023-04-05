@@ -1,4 +1,6 @@
 lib = File.expand_path('../lib', __FILE__)
+generated = File.expand_path('../generated', __FILE__)
+$LOAD_PATH.unshift(generated) unless $LOAD_PATH.include?(generated)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'google/apis/version'
 
@@ -21,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = %w[lib generated]
 
-  spec.required_ruby_version = '~> 2.4'
+  spec.required_ruby_version = '>= 2.4'
 
   spec.add_runtime_dependency 'representable', '~> 3.0'
   spec.add_runtime_dependency 'retriable', '>= 2.0', '< 4.0'
