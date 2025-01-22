@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'extlib', '~> 0.9'
   s.add_runtime_dependency 'faraday', '~> 1.10.3'
   s.add_runtime_dependency 'faraday-multipart', '~> 1.0'
-  s.add_runtime_dependency 'googleauth', '~> 0.3'
+  s.add_runtime_dependency 'googleauth', '~> 1.9'
   s.add_runtime_dependency 'launchy', '~> 2.4'
   s.add_runtime_dependency 'multi_json', '~> 1.10'
   s.add_runtime_dependency 'retriable', '~> 2.0'
